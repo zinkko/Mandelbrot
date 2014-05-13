@@ -106,7 +106,7 @@ public class Fraktaali extends JPanel {
         int height = 768;
 
         BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_3BYTE_BGR);
-        File out = new File("temp.png");
+        File out = new File(System.currentTimeMillis()+".png");
 
         if (this.palette == null) {
             this.setPalette();
