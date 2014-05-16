@@ -106,7 +106,7 @@ public class Fraktaali extends JPanel {
         int height = 768;
 
         BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_3BYTE_BGR);
-        File out = new File(System.currentTimeMillis()+".png");
+        File out = new File(System.currentTimeMillis()+".png"); 
 
         if (this.palette == null) {
             this.setPalette();
@@ -117,8 +117,8 @@ public class Fraktaali extends JPanel {
         for (int i = 0; i < width; i++) {
             for (int j = 0; j < height; j++) {
 
-                double rez = reCenter + unit * (i - leveys / 2);
-                double imz = imagCenter + unit * (j - pituus / 2);
+                double rez = reCenter + unit * (i - width / 2);
+                double imz = imagCenter + unit * (j - height / 2);
                 
                 iterations = this.belongsInBox(rez, imz);
                 int rgb = this.palette.get(iterations).getRGB();
